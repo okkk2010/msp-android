@@ -1,0 +1,21 @@
+# MSP Android Work Index
+
+## Implementation Logs
+
+- [Step 01 - Android Project Skeleton](./logs/2026-06-05_step-01_android-project-skeleton.md)
+
+## Specifications
+
+- [01_android_overview_spec.md](./01_android_overview_spec.md)
+- [02_android_environment_spec.md](./02_android_environment_spec.md)
+- [03_android_project_structure_spec.md](./03_android_project_structure_spec.md)
+- [04_android_auth_spec.md](./04_android_auth_spec.md)
+- [05_android_api_contract_spec.md](./05_android_api_contract_spec.md)
+- [06_android_overlay_json_spec.md](./06_android_overlay_json_spec.md)
+- [07_android_renderer_spec.md](./07_android_renderer_spec.md)
+- [08_android_overlay_service_spec.md](./08_android_overlay_service_spec.md)
+- [09_android_ui_screen_spec.md](./09_android_ui_screen_spec.md)
+- [10_android_local_storage_spec.md](./10_android_local_storage_spec.md)
+- [11_android_error_handling_spec.md](./11_android_error_handling_spec.md)
+- [12_android_test_plan_spec.md](./12_android_test_plan_spec.md)
+- [13_android_implementation_order.md](./13_android_implementation_order.md)
