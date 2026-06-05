@@ -10,6 +10,7 @@
 - [Step 06 - Android OAuth Bridge Readiness](./logs/2026-06-05_step-06_android-oauth-bridge.md)
 - [Step 07 - Library API Integration](./logs/2026-06-05_step-07_library-api.md)
 - [Step 08 - Overlay JSON Parser and Validator](./logs/2026-06-05_step-08_overlay-json-parser.md)
+- [Step 09 - Preview Renderer](./logs/2026-06-05_step-09_preview-renderer.md)
 
 ## Specifications
 
