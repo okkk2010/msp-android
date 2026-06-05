@@ -24,12 +24,18 @@ android {
     buildTypes {
         debug {
             buildConfigField("String", "API_BASE_URL", "\"http://10.0.2.2:8080\"")
+            buildConfigField("Boolean", "HTTP_LOGGING_ENABLED", "true")
             manifestPlaceholders["usesCleartextTraffic"] = true
         }
         release {
             buildConfigField("String", "API_BASE_URL", "\"https://api.msp-overlay.store\"")
+            buildConfigField("Boolean", "HTTP_LOGGING_ENABLED", "false")
             manifestPlaceholders["usesCleartextTraffic"] = false
             isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+            )
         }
     }
 

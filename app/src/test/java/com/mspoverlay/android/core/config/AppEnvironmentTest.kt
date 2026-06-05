@@ -20,4 +20,9 @@ class AppEnvironmentTest {
     fun apiBaseUrlIsHttpOnlyForDebugBuild() {
         assertTrue(AppEnvironment.apiBaseUrl.startsWith("http://"))
     }
+
+    @Test
+    fun httpLoggingIsEnabledForDebugBuild() {
+        assertTrue(AppEnvironment.httpLoggingEnabled)
+    }
 }
