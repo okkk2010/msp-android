@@ -11,6 +11,7 @@
 - [Step 07 - Library API Integration](./logs/2026-06-05_step-07_library-api.md)
 - [Step 08 - Overlay JSON Parser and Validator](./logs/2026-06-05_step-08_overlay-json-parser.md)
 - [Step 09 - Preview Renderer](./logs/2026-06-05_step-09_preview-renderer.md)
+- [Step 10 - Overlay Permission Flow](./logs/2026-06-05_step-10_overlay-permission-flow.md)
 
 ## Specifications
 
