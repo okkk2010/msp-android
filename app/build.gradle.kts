@@ -17,6 +17,22 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "API_BASE_URL", "\"http://10.0.2.2:8080\"")
+            manifestPlaceholders["usesCleartextTraffic"] = true
+        }
+        release {
+            buildConfigField("String", "API_BASE_URL", "\"https://api.msp-overlay.store\"")
+            manifestPlaceholders["usesCleartextTraffic"] = false
+            isMinifyEnabled = false
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

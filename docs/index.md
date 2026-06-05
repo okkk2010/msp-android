@@ -3,6 +3,7 @@
 ## Implementation Logs
 
 - [Step 01 - Android Project Skeleton](./logs/2026-06-05_step-01_android-project-skeleton.md)
+- [Step 02 - Environment Configuration](./logs/2026-06-05_step-02_environment-config.md)
 
 ## Specifications
 
