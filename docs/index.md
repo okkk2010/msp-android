@@ -4,6 +4,7 @@
 
 - [Step 01 - Android Project Skeleton](./logs/2026-06-05_step-01_android-project-skeleton.md)
 - [Step 02 - Environment Configuration](./logs/2026-06-05_step-02_environment-config.md)
+- [Step 03 - API Client](./logs/2026-06-05_step-03_api-client.md)
 
 ## Specifications
 
