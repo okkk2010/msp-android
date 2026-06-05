@@ -11,9 +11,11 @@ import android.os.Build
 import android.os.IBinder
 import com.mspoverlay.android.MainActivity
 import com.mspoverlay.android.R
+import com.mspoverlay.android.overlay.parser.OverlayJsonParser
 
 class OverlayService : Service() {
     private lateinit var windowController: OverlayWindowController
+    private val parser = OverlayJsonParser()
 
     override fun onCreate() {
         super.onCreate()
@@ -29,7 +31,10 @@ class OverlayService : Service() {
             }
             else -> {
                 startForeground(NOTIFICATION_ID, buildNotification())
-                windowController.show(document = null)
+                val document = intent?.getStringExtra(EXTRA_OVERLAY_JSON)
+                    ?.takeIf { it.isNotBlank() }
+                    ?.let { runCatching { parser.parse(it) }.getOrNull() }
+                windowController.show(document)
                 return START_STICKY
             }
         }
@@ -94,8 +99,19 @@ class OverlayService : Service() {
     companion object {
         const val ACTION_START = "com.mspoverlay.android.overlay.action.START"
         const val ACTION_STOP = "com.mspoverlay.android.overlay.action.STOP"
+        const val EXTRA_OVERLAY_JSON = "com.mspoverlay.android.overlay.extra.OVERLAY_JSON"
         private const val CHANNEL_ID = "msp_overlay"
         private const val NOTIFICATION_ID = 2010
+
+        fun createStartIntent(context: Context, overlayJson: String): Intent {
+            return Intent(context, OverlayService::class.java)
+                .setAction(ACTION_START)
+                .putExtra(EXTRA_OVERLAY_JSON, overlayJson)
+        }
+
+        fun createStopIntent(context: Context): Intent {
+            return Intent(context, OverlayService::class.java)
+                .setAction(ACTION_STOP)
+        }
     }
 }
-
