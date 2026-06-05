@@ -15,6 +15,7 @@
 - [Step 11 - Foreground Overlay Service](./logs/2026-06-05_step-11_foreground-overlay-service.md)
 - [Step 12 - Start Stop Apply Flow and Final Verification](./logs/2026-06-05_step-12_start-stop-apply-flow.md)
 - [Step 13 - Local Cache](./logs/2026-06-05_step-13_local-cache.md)
+- [Step 14 - Integration Tests](./logs/2026-06-05_step-14_integration-tests.md)
 
 ## Specifications
 
