@@ -8,6 +8,7 @@
 - [Step 04 - Public API Integration](./logs/2026-06-05_step-04_public-api.md)
 - [Step 05 - Secure Token Storage](./logs/2026-06-05_step-05_secure-token-storage.md)
 - [Step 06 - Android OAuth Bridge Readiness](./logs/2026-06-05_step-06_android-oauth-bridge.md)
+- [Step 07 - Library API Integration](./logs/2026-06-05_step-07_library-api.md)
 
 ## Specifications
 
