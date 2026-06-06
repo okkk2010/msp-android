@@ -16,6 +16,8 @@ data class RectElement(
     val y: Double,
     val width: Double,
     val height: Double,
+    val anchor: String,
+    val anchorSpace: String,
     val rotation: Double,
     override val opacity: Double,
     override val zIndex: Int,
@@ -34,6 +36,8 @@ data class CircleElement(
     val y: Double,
     val width: Double,
     val height: Double,
+    val anchor: String,
+    val anchorSpace: String,
     val rotation: Double,
     override val opacity: Double,
     override val zIndex: Int,
@@ -59,4 +63,3 @@ data class LineElement(
     val strokeWidth: Double,
     val dashStyle: String?,
 ) : OverlayElement
-

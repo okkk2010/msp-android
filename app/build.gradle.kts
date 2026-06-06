@@ -23,9 +23,9 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "API_BASE_URL", "\"http://10.0.2.2:8080\"")
+            buildConfigField("String", "API_BASE_URL", "\"https://api.msp-overlay.store\"")
             buildConfigField("Boolean", "HTTP_LOGGING_ENABLED", "true")
-            manifestPlaceholders["usesCleartextTraffic"] = true
+            manifestPlaceholders["usesCleartextTraffic"] = false
         }
         release {
             buildConfigField("String", "API_BASE_URL", "\"https://api.msp-overlay.store\"")

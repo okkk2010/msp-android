@@ -7,8 +7,8 @@ import org.junit.Test
 
 class AppEnvironmentTest {
     @Test
-    fun debugApiBaseUrlUsesAndroidEmulatorHost() {
-        assertEquals("http://10.0.2.2:8080", AppEnvironment.apiBaseUrl)
+    fun debugApiBaseUrlUsesHostedApi() {
+        assertEquals("https://api.msp-overlay.store", AppEnvironment.apiBaseUrl)
     }
 
     @Test
@@ -17,8 +17,8 @@ class AppEnvironmentTest {
     }
 
     @Test
-    fun apiBaseUrlIsHttpOnlyForDebugBuild() {
-        assertTrue(AppEnvironment.apiBaseUrl.startsWith("http://"))
+    fun apiBaseUrlUsesHttpsForHostedApi() {
+        assertTrue(AppEnvironment.apiBaseUrl.startsWith("https://"))
     }
 
     @Test

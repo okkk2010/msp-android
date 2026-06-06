@@ -10,6 +10,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
+import android.view.WindowInsets
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -89,6 +90,7 @@ class MainActivity : Activity() {
         screenTitle = findViewById(R.id.screenTitle)
         backButton = findViewById(R.id.backButton)
         backButton.setOnClickListener { showScreen(Screen.Home) }
+        applyTopBarInsets()
 
         restoreCachedOverlay()
         handleOAuthCallback(intent)
@@ -118,6 +120,39 @@ class MainActivity : Activity() {
             super.onBackPressed()
         } else {
             showScreen(Screen.Home)
+        }
+    }
+
+    private fun applyTopBarInsets() {
+        val topBar = findViewById<LinearLayout>(R.id.topBar)
+        val baseHeight = topBar.layoutParams.height
+        val basePaddingTop = topBar.paddingTop
+        val basePaddingBottom = topBar.paddingBottom
+        val basePaddingStart = topBar.paddingStart
+        val basePaddingEnd = topBar.paddingEnd
+
+        topBar.setOnApplyWindowInsetsListener { view, insets ->
+            val statusBarTop = statusBarTopInset(insets)
+            view.setPaddingRelative(
+                basePaddingStart,
+                basePaddingTop + statusBarTop,
+                basePaddingEnd,
+                basePaddingBottom,
+            )
+            view.layoutParams = view.layoutParams.apply {
+                height = baseHeight + statusBarTop
+            }
+            insets
+        }
+        topBar.requestApplyInsets()
+    }
+
+    @Suppress("DEPRECATION")
+    private fun statusBarTopInset(insets: WindowInsets): Int {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            insets.getInsets(WindowInsets.Type.statusBars()).top
+        } else {
+            insets.systemWindowInsetTop
         }
     }
 

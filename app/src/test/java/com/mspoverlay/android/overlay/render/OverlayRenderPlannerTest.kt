@@ -30,6 +30,8 @@ class OverlayRenderPlannerTest {
                     y = 0.0,
                     width = 10.0,
                     height = 10.0,
+                    anchor = "top-left",
+                    anchorSpace = "safeFrame",
                     rotation = 0.0,
                     opacity = 1.0,
                     zIndex = 0,
@@ -62,6 +64,8 @@ class OverlayRenderPlannerTest {
                     y = 5.0,
                     width = 20.0,
                     height = 10.0,
+                    anchor = "top-left",
+                    anchorSpace = "safeFrame",
                     rotation = 15.0,
                     opacity = 0.5,
                     zIndex = 1,
@@ -84,11 +88,54 @@ class OverlayRenderPlannerTest {
 
         val rect = plan.commands[0] as RectCommand
         assertEquals(20f, rect.x)
-        assertEquals(15f, rect.y)
+        assertEquals(60f, rect.y)
         assertEquals(40f, rect.width)
-        assertEquals(30f, rect.height)
-        assertEquals(10f, rect.strokeWidth)
-        assertEquals(15f, rect.cornerRadius)
+        assertEquals(20f, rect.height)
+        assertEquals(8f, rect.strokeWidth)
+        assertEquals(12f, rect.cornerRadius)
+    }
+
+    @Test
+    fun anchorsRectToScreenRightEdgeWhenAnchorSpaceIsScreen() {
+        val document = OverlayDocument(
+            schemaVersion = "1.0.0",
+            overlayId = "ovl_android_001",
+            name = "Android Overlay",
+            platform = "android",
+            game = null,
+            canvas = OverlayCanvas(baseWidth = 200.0, baseHeight = 100.0),
+            overlaySettings = OverlaySettings(opacity = 1.0),
+            elements = listOf(
+                RectElement(
+                    id = "rect",
+                    type = "rect",
+                    x = 180.0,
+                    y = 10.0,
+                    width = 20.0,
+                    height = 10.0,
+                    anchor = "top-right",
+                    anchorSpace = "screen",
+                    rotation = 0.0,
+                    opacity = 1.0,
+                    zIndex = 0,
+                    visible = true,
+                    locked = false,
+                    fillColor = "#2563eb",
+                    strokeColor = null,
+                    strokeWidth = 0.0,
+                    cornerRadius = 0.0,
+                ),
+            ),
+            meta = null,
+        )
+
+        val plan = planner.plan(document, targetWidth = 400, targetHeight = 300)
+        val rect = plan.commands[0] as RectCommand
+
+        assertEquals(360f, rect.x)
+        assertEquals(20f, rect.y)
+        assertEquals(40f, rect.width)
+        assertEquals(20f, rect.height)
     }
 
     @Test
