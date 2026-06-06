@@ -42,5 +42,12 @@
             android:text="@string/state_idle_library"
             android:textColor="#334155"
             android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/libraryList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical" />
     </LinearLayout>
 </ScrollView>
