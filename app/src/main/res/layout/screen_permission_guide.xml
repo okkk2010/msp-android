@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/permission_guide_body"
+            android:textColor="#334155"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/permissionGuideState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:textColor="#334155"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/permissionGuideSettingsButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/action_open_overlay_permission" />
+
+        <Button
+            android:id="@+id/permissionGuideNotificationButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/action_request_notification_permission" />
+    </LinearLayout>
+</ScrollView>
